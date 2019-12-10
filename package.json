@@ -1,6 +1,6 @@
 {
   "name": "@codevor/logger.js",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!",
   "main": "dist/logger.js",
   "unpkg": "dist/logger.min.js",
@@ -49,7 +49,7 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "rimraf": "^3.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "terser-webpack-plugin": "^2.2.2",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9"
   },
