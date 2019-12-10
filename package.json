@@ -1,6 +1,6 @@
 {
   "name": "@codevor/logger.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!",
   "main": "dist/logger.js",
   "unpkg": "dist/logger.min.js",
@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/codevor/logger.js/issues"
   },
-  "homepage": "https://github.com/codevor/logger.js#readme",
+  "homepage": "https://codevor.github.io/logger.js/",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
