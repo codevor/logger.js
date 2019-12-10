@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
@@ -15,11 +15,11 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
+    library: libraryName,
+    libraryTarget: 'umd',
     filename: '[name].js',
-    library: 'Logger',
-    umdNamedDefine: true,
-    globalObject: `(typeof self !== 'undefined' ? self : this)`
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   module: {
     rules: [
@@ -37,7 +37,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new UglifyJsPlugin({ include: /\.min\.js$/ })]
+    minimizer: [new TerserPlugin()]
   },
   plugins: [
     new webpack.DefinePlugin({
