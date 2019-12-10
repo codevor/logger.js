@@ -9,8 +9,8 @@
 logger is available on npm/yarn:
 
 ```bash
-$ npm install logger.js --save
-$ yarn add logger.js
+$ npm install @codevor/logger.js --save
+$ yarn add @codevor/logger.js
 ```
 
 ## Usage
@@ -18,23 +18,47 @@ $ yarn add logger.js
 ### With ES6/import
 
 ```js
-import Logger from 'logger.js';
+import Logger from '@codevor/logger.js';
 
 Logger.success('Success message example.');
+// => ✅ Success message example
 Logger.error('Error message example.');
+// => 🚫 Error message example
 Logger.warn('Warning message example.');
+// => ⚠️ Warning message example
 Logger.info('Information message example.');
+// => ℹ️ Informational message example
 ```
 
 ### With require
 
 ```js
-const Logger = require('logger.js');
+const Logger = require('@codevor/logger.js');
 
 Logger.success('Success message example.');
+// => ✅ Success message example
 Logger.error('Error message example.');
+// => 🚫 Error message example
 Logger.warn('Warning message example.');
+// => ⚠️ Warning message example
 Logger.info('Information message example.');
+// => ℹ️ Informational message example
+```
+
+### Change Emojis
+
+Is it possible to change emojis for each message? **Yes**! Check it out:
+
+```js
+import Logger from '@codevor/logger.js';
+
+Logger.success('Success message example.');
+// => ✅ Success message example
+
+Logger.setEmoji({ type: 'success', emoji: '🐶' });
+
+Logger.success('Success message example.');
+// => 🐶 Success message example
 ```
 
 ## Contributing
