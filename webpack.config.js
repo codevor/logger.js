@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 const mode = isProduction ? 'production' : 'development';
 
-const libraryName = 'js-library-boilerplate';
+const libraryName = 'logger';
 
 module.exports = {
   mode,
@@ -17,10 +17,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    library: libraryName,
-    libraryTarget: 'umd',
+    library: 'Logger',
+    libraryExport: 'default',
     umdNamedDefine: true,
-    globalObject: "typeof self !== 'undefined' ? self : this"
+    globalObject: `(typeof self !== 'undefined' ? self : this)`
   },
   module: {
     rules: [
