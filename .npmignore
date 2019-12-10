@@ -2,5 +2,6 @@
 *.log
 src
 tests
-examples
 coverage
+.github
+**/webpack.config.js
