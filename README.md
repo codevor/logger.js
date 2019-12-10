@@ -1,16 +1,16 @@
-# js-library-boilerplate
+# logger
 
 [![License][license-badge]][license-url] [![Travis CI][travis-badge]][travis-url] [![Coverage Status][coverage-badge]][coverage-url] [![Commitizen][commitizen-badge]][commitizen-url]
 
-> js-library-boilerplate-description.
+> 💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!
 
 ## Installation
 
-js-library-boilerplate is available on npm/yarn:
+logger is available on npm/yarn:
 
 ```bash
-$ npm install js-library-boilerplate --save
-$ yarn add js-library-boilerplate
+$ npm install logger.js --save
+$ yarn add logger.js
 ```
 
 ## Usage
@@ -18,17 +18,23 @@ $ yarn add js-library-boilerplate
 ### With ES6/import
 
 ```js
-import { sum } from 'js-library-boilerplate';
+import Logger from 'logger.js';
 
-sum(2, 2); // => 4
+Logger.success('Success message example.');
+Logger.error('Error message example.');
+Logger.warn('Warning message example.');
+Logger.info('Information message example.');
 ```
 
 ### With require
 
 ```js
-const sum = require('js-library-boilerplate').sum;
+const Logger = require('logger.js');
 
-sum(2, 2); // => 4
+Logger.success('Success message example.');
+Logger.error('Error message example.');
+Logger.warn('Warning message example.');
+Logger.info('Information message example.');
 ```
 
 ## Contributing
@@ -37,21 +43,21 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Changelog
 
-This project adheres to [Semantic Versioning](https://semver.org/). Every release, along with the migration instructions, is documented on the Github [Releases](https://github.com/codevor/js-library-boilerplate/releases) page.
+This project adheres to [Semantic Versioning](https://semver.org/). Every release, along with the migration instructions, is documented on the Github [Releases](https://github.com/codevor/logger.js/releases) page.
 
 ## Bugs and Sugestions
 
-Report bugs or do suggestions using the [issues](https://github.com/codevor/js-library-boilerplate/issues).
+Report bugs or do suggestions using the [issues](https://github.com/codevor/logger.js/issues).
 
 ## License
 
 [MIT License](LICENSE) © [Codevor](https://github.com/codevor)
 
-[license-badge]: https://img.shields.io/github/license/codevor/js-library-boilerplate.svg
+[license-badge]: https://img.shields.io/github/license/codevor/logger.js.svg
 [license-url]: https://opensource.org/licenses/MIT
-[coverage-badge]: https://coveralls.io/repos/github/codevor/js-library-boilerplate/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/codevor/js-library-boilerplate?branch=master
-[travis-badge]: https://travis-ci.org/codevor/js-library-boilerplate.svg?branch=master
-[travis-url]: https://travis-ci.org/codevor/js-library-boilerplate
+[coverage-badge]: https://coveralls.io/repos/github/codevor/logger.js/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/codevor/logger.js?branch=master
+[travis-badge]: https://travis-ci.org/codevor/logger.js.svg?branch=master
+[travis-url]: https://travis-ci.org/codevor/logger.js
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
