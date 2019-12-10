@@ -1,9 +1,9 @@
 {
-  "name": "js-library-boilerplate",
+  "name": "@codevor/logger.js",
   "version": "0.1.0",
-  "description": "js-library-boilerplate-description",
-  "main": "dist/js-library-boilerplate.js",
-  "unpkg": "dist/js-library-boilerplate.min.js",
+  "description": "💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!",
+  "main": "dist/logger.js",
+  "unpkg": "dist/logger.min.js",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "NODE_ENV=dev webpack --progress --colors --watch",
@@ -15,17 +15,24 @@
     "prepublish": "yarn lint && yarn test && yarn clean && yarn build:umd",
     "commit": "git-cz"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "log",
+    "javascript-debug",
+    "console",
+    "debug",
+    "emoji"
+  ],
   "author": "Helder Burato Berto <helder.burato@gmail.com> (https://helder.dev/)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codevor/js-library-boilerplate.git"
+    "url": "git+https://github.com/codevor/logger.js.git"
   },
   "bugs": {
-    "url": "https://github.com/codevor/js-library-boilerplate/issues"
+    "url": "https://github.com/codevor/logger.js/issues"
   },
-  "homepage": "https://github.com/codevor/js-library-boilerplate#readme",
+  "homepage": "https://github.com/codevor/logger.js#readme",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
