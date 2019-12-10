@@ -15,7 +15,7 @@ const Logger = (() => {
 
   function info(message, ...args) {
     const logMessage = createMessage('info', message);
-    console.log.call(console, logMessage, ...args);
+    console.info.call(console, logMessage, ...args);
 
     return logMessage;
   }
@@ -34,11 +34,27 @@ const Logger = (() => {
     return logMessage;
   }
 
+  function trace(message, ...args) {
+    const logMessage = createMessage('trace', message);
+    console.trace.call(console, logMessage, ...args);
+
+    return logMessage;
+  }
+
+  function debug(message, ...args) {
+    const logMessage = createMessage('debug', message);
+    console.debug.call(console, logMessage, ...args);
+
+    return logMessage;
+  }
+
   return {
     success,
     info,
     warn,
     error,
+    trace,
+    debug,
     setEmoji: config.setEmoji
   };
 })();
