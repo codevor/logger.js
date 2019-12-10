@@ -24,4 +24,16 @@ describe('Logger', () => {
       '🚫 Error message example'
     );
   });
+
+  test('should create Logger.trace', () => {
+    expect(Logger.trace('Trace message example')).toEqual(
+      '🐾 Trace message example'
+    );
+  });
+
+  test('should create Logger.debug', () => {
+    expect(Logger.debug('Debug message example')).toEqual(
+      '🐛 Debug message example'
+    );
+  });
 });
