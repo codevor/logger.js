@@ -16,6 +16,7 @@ const config = (() => {
 
   const setEmoji = ({ type, emoji }) => {
     defaultConfig[type].emoji = emoji;
+    return emoji;
   };
 
   const getEmoji = type => defaultConfig[type].emoji;
