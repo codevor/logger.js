@@ -1,7 +1,0 @@
-.DS_Store
-*.log
-src
-tests
-coverage
-.github
-**/webpack.config.js
