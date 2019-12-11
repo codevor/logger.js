@@ -1,9 +1,12 @@
 {
   "name": "@codevor/logger.js",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!",
   "main": "dist/logger.js",
   "unpkg": "dist/logger.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "dev": "NODE_ENV=dev webpack --progress --colors --watch",
@@ -12,7 +15,7 @@
     "test": "jest --coverage --expand",
     "test:watch": "jest --watch",
     "coveralls": "cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "prepublish": "yarn lint && yarn test && yarn clean && yarn build:umd",
+    "prepublish": "yarn clean && yarn build:umd",
     "commit": "git-cz"
   },
   "keywords": [
