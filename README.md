@@ -50,12 +50,12 @@ Logger.info('Information message example.');
 Is it possible to change emojis for each message? **Yes**! Check it out:
 
 ```js
-import Logger from '@codevor/logger.js';
+import Logger, { Emoji } from '@codevor/logger.js';
 
 Logger.success('Success message example.');
 // => ✅ Success message example
 
-Logger.setEmoji({ type: 'success', emoji: '🐶' });
+Emoji.setEmoji({ type: 'success', emoji: '🐶' });
 
 Logger.success('Success message example.');
 // => 🐶 Success message example
