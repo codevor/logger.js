@@ -36,8 +36,4 @@ describe('Logger', () => {
       '🐛 Debug message example'
     );
   });
-
-  test('should update emoji to Logger.debug', () => {
-    expect(Logger.setEmoji('info', '🦁')).toEqual('🦁');
-  });
 });
