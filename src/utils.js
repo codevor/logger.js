@@ -1,9 +1,9 @@
-import config from './config';
+import Emoji from './emoji';
 
 const isSuccess = type => type === 'success';
 
 const createMessage = (type, message) => {
-  const emoji = config.getEmoji(type);
+  const emoji = Emoji.getEmoji(type);
   return `${emoji} ${message}`;
 }
 
