@@ -3,8 +3,11 @@ import Emoji from './emoji';
 const isSuccess = type => type === 'success';
 
 const createMessage = (type, message) => {
-  const emoji = Emoji.getEmoji(type);
-  return `${emoji} ${message}`;
+  if (type) {
+    const emoji = Emoji.getEmoji(type);
+    return `${emoji} ${message}`;
+  }
+  return message;
 }
 
 export const intercept = (type, ...args) => {

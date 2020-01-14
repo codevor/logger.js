@@ -1,13 +1,21 @@
-import logLevels from './config/log-levels';
+import { getLevelByType } from './log-levels';
 
-export default class Emoji {
-  static setEmoji(type, emoji) {
-    const foundByType = logLevels.get(type);
+const Emoji = (() => {
+  function setEmoji(type, emoji) {
+    const foundByType = getLevelByType(type);
     foundByType.emoji = emoji;
     return emoji;
   };
 
-  static getEmoji(type) {
-    return logLevels.get(type).emoji;
+  function getEmoji(type) {
+    const { emoji } = getLevelByType(type);
+    return emoji;
   }
-}
+
+  return {
+    setEmoji,
+    getEmoji
+  }
+})();
+
+export default Emoji;
