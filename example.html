@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example: logger.js</title>
+</head>
+<body>
+  <script src="./dist/logger.js"></script>
+  <script>
+    logger.default.success('Success example log'); // => ✅ Success example log
+    logger.default.error('Error example log'); // => 🚫 Error example log
+    logger.default.info('Info example log'); // => ℹ️ Info example log
+    logger.default.trace('Trace example log'); // => 🐾 Trace example log
+
+    console.log(logger.Emoji.getEmoji('error')); // => 🚫
+    console.log(logger.Emoji.getEmoji('info')); // => ℹ️
+  </script>
+</body>
+</html>
