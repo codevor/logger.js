@@ -1,62 +1,33 @@
 import config from './config';
 
-const Logger = (() => {
-  function createMessage(type, message) {
-    const emoji = config.getEmoji(type);
-    return `${emoji} ${message}`;
+import { intercept } from './utils';
+
+export default class Logger {
+  static success(args) {
+    return intercept(this.success.name, args);
   }
 
-  function success(message, ...args) {
-    const logMessage = createMessage('success', message);
-    console.log.call(console, logMessage, ...args);
-
-    return logMessage;
+  static info(args) {
+    return intercept(this.info.name, args);
   }
 
-  function info(message, ...args) {
-    const logMessage = createMessage('info', message);
-    console.info.call(console, logMessage, ...args);
-
-    return logMessage;
+  static warn(args) {
+    return intercept('warn', args);
   }
 
-  function warn(message, ...args) {
-    const logMessage = createMessage('warn', message);
-    console.warn.call(console, logMessage, ...args);
-
-    return logMessage;
+  static error(args) {
+    return intercept('error', args);
   }
 
-  function error(message, ...args) {
-    const logMessage = createMessage('error', message);
-    console.error.call(console, logMessage, ...args);
-
-    return logMessage;
+  static trace(args) {
+    return intercept('trace', args);
   }
 
-  function trace(message, ...args) {
-    const logMessage = createMessage('trace', message);
-    console.trace.call(console, logMessage, ...args);
-
-    return logMessage;
+  static debug(args) {
+    return intercept('debug', args);
   }
 
-  function debug(message, ...args) {
-    const logMessage = createMessage('debug', message);
-    console.debug.call(console, logMessage, ...args);
-
-    return logMessage;
+  static setEmoji(...args) {
+    return config.setEmoji(...args);
   }
-
-  return {
-    success,
-    info,
-    warn,
-    error,
-    trace,
-    debug,
-    setEmoji: config.setEmoji
-  };
-})();
-
-export default Logger;
+}
