@@ -2,22 +2,49 @@ import Emoji from './emoji';
 
 const isSuccess = type => type === 'success';
 
-const createMessage = (type, message) => {
-  if (type) {
-    const emoji = Emoji.getEmoji(type);
-    return `${emoji} ${message}`;
+const isStringEmpty = string => typeof string && string.length === 0;
+
+const isObjectEmpty = (obj = {}) => typeof obj === 'object' && Object.keys(obj).length === 0;
+
+const parseObject = (obj, parse) => !isObjectEmpty(obj) && parse === true ? JSON.stringify(obj) : obj;
+
+const createMessage = (type, message, promiseStatus) => {
+  const emoji = Emoji.getEmoji(type);
+  let generatedMessage = `${emoji} ${message}`;
+
+  if (!isStringEmpty(promiseStatus)) {
+    generatedMessage = `${generatedMessage} | ${promiseStatus}`
   }
-  return message;
+
+  return generatedMessage;
 }
 
-export const intercept = (type, args) => {
+const createConsoleArgs = ({ message, params, parse, args }) => {
+  const consoleArgs = [message];
+
+  if (!isObjectEmpty(params)) {
+    const parsedObject = parseObject(params, parse);
+    consoleArgs.push(parsedObject);
+  }
+
+  consoleArgs.push(...args);
+
+  return consoleArgs;
+}
+
+const getLogType = type => isSuccess(type) ? 'log' : type;
+
+export const intercept = ({ type, args, parse = false, promiseStatus = '' }) => {
   const message = args.shift();
+  const params = args.shift();
 
-  const parsedMessage = createMessage(type, message);
+  const parsedMessage = createMessage(type, message, promiseStatus);
 
-  const currentType = isSuccess(type) ? 'log' : type;
+  const consoleArgs = createConsoleArgs({ message: parsedMessage, params, parse, args });
 
-  console[currentType].call(console, parsedMessage, ...args);
+  const currentType = getLogType(type);
+
+  console[currentType].call(console, ...consoleArgs);
 
   return parsedMessage;
 }
