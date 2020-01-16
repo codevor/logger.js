@@ -38,4 +38,28 @@ describe('Logger', () => {
       '🐛 Debug message example'
     );
   });
+
+  test('should create Logger.pending', () => {
+    expect(Logger.pending('Pending message example', { helloWorld: true })).toEqual(
+      'ℹ️ Pending message example | pending'
+    );
+  });
+
+  test('should create Logger.fulfilled', () => {
+    expect(Logger.fulfilled('Fulfilled message example', { helloWorld: true })).toEqual(
+      '✅ Fulfilled message example | fulfilled'
+    );
+  });
+
+  test('should create Logger.rejected', () => {
+    expect(Logger.rejected('Rejected message example', { helloWorld: true })).toEqual(
+      '🚫 Rejected message example | rejected'
+    );
+  });
+
+  test('should create Logger.settled', () => {
+    expect(Logger.settled('Settled message example', { helloWorld: true })).toEqual(
+      '✅ Settled message example | settled'
+    );
+  });
 });

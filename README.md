@@ -28,6 +28,19 @@ Logger.warn('Warning message example.');
 // => ⚠️ Warning message example
 Logger.info('Information message example.');
 // => ℹ️ Informational message example
+
+// PROMISE STATUSES LOGS
+Logger.pending('Promise message example.', { hello: true });
+// => ℹ️ Promise message example | pending {"hello":true}
+
+Logger.fulfilled('Promise message example.', { hello: true });
+// => ✅ Promise message example | fulfilled {"hello":true}
+
+Logger.rejected('Promise message example.', { hello: true });
+// => 🚫 Promise message example | rejected {"hello":true}
+
+Logger.settled('Promise message example.', { hello: true });
+// => ✅ Promise message example | settled {"hello":true}
 ```
 
 ### With require
@@ -43,7 +56,22 @@ Logger.warn('Warning message example.');
 // => ⚠️ Warning message example
 Logger.info('Information message example.');
 // => ℹ️ Informational message example
+
+// PROMISE STATUSES LOGS
+Logger.pending('Promise message example.', { hello: true });
+// => ℹ️ Promise message example | pending {"hello":true}
+
+Logger.fulfilled('Promise message example.', { hello: true });
+// => ✅ Promise message example | fulfilled {"hello":true}
+
+Logger.rejected('Promise message example.', { hello: true });
+// => 🚫 Promise message example | rejected {"hello":true}
+
+Logger.settled('Promise message example.', { hello: true });
+// => ✅ Promise message example | settled {"hello":true}
 ```
+
+_Note: All promises convert objects to strings_
 
 ### Change Emojis
 
