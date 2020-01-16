@@ -1,6 +1,6 @@
 {
   "name": "@codevor/logger.js",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "💢 Make logging friendlier, simpler and use emojis in your messages. Try logger!",
   "main": "dist/logger.js",
   "unpkg": "dist/logger.min.js",
