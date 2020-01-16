@@ -10,7 +10,7 @@ const createMessage = (type, message) => {
   return message;
 }
 
-export const intercept = (type, ...args) => {
+export const intercept = (type, args) => {
   const message = args.shift();
 
   const parsedMessage = createMessage(type, message);
